@@ -1,0 +1,37 @@
+
+services:
+
+  node:
+    build:
+      context: ./Node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Node:/usr/src/app
+    depends_on:
+      - mongodb
+    networks:
+      - app
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-fullstack
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: assignment2db
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app
+
+
+
+volumes:
+  mongo_data:
+
+networks:
+  app:
+    driver: bridge
