@@ -58,6 +58,36 @@ router.post('/api/v1/emp/employees', [
 });
 
 
+router.get('/api/v1/emp/employees/search', (req, res) => {
+    const { name, position } = req.query;
+
+    
+    const searchQuery = {};
+    if (name) {
+        searchQuery.$or = [
+            { first_name: { $regex: name, $options: 'i' } }, 
+            { last_name: { $regex: name, $options: 'i' } }   
+        ];
+    }
+    if (position) {
+        searchQuery.position = { $regex: position, $options: 'i' }; 
+    }
+
+    employeeModel.find(searchQuery)
+        .then(employees => {
+            if (employees.length === 0) {
+                return res.status(404).send({
+                    message: 'No employees found matching the search criteria'
+                });
+            }
+            res.status(200).send(employees);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message
+            });
+        });
+});
 
 
 
@@ -157,7 +187,6 @@ router.delete('/api/v1/emp/employees/:eid', [
             })
         })
 });
-
 
 
 

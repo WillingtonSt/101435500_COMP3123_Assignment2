@@ -1,0 +1,81 @@
+.container {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .heading {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .primary-button {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .secondary-button {
+    background: #f44336;
+    color: white;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .th {
+    background: #4caf50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
+  .success {
+    color: green;
+    text-align: center;
+  }
+  

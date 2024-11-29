@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const employeeRoutes = require('./routes/employee_management');
 const userRoutes = require('./routes/user_management');
+const cors = require('cors')
 
 const DB_URL = "mongodb://admin:password@mongodb:27017/assignment2db?authSource=admin"
 const app = express();
@@ -20,6 +21,8 @@ mongoose.connect(DB_URL, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
+
+app.use(cors())
 
 app.use('/', employeeRoutes);
 app.use('/', userRoutes);

@@ -1,0 +1,83 @@
+
+#app-body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+#app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 20px;
+  z-index: 1000;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#app-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#app-navbar ul li {
+  margin-right: 20px;
+}
+
+#app-navbar ul li a, #app-navbar ul li button {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+#app-navbar ul li a:hover, #app-navbar ul li button:hover {
+  background-color: #575757;
+  border-radius: 4px;
+  color: #f4f7fc;
+}
+
+
+#app-main-content {
+  padding: 20px;
+  margin-top: 350px;  
+  border-radius: 8px;
+  
+}
+
+
+#welcome-message {
+  text-align: center;
+  color: #333;
+}
+
+
+@media (max-width: 600px) {
+  #app-navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #app-navbar ul li {
+    margin-bottom: 10px;
+  }
+}
